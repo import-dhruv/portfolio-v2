@@ -2,14 +2,14 @@ import InteractiveTerminal from "@/components/InteractiveTerminal";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-16 sm:py-24 relative px-4">
       <div className="container max-w-5xl">
         <h2 className="font-mono text-sm text-primary mb-2">// about me</h2>
-        <h3 className="text-3xl sm:text-4xl font-bold mb-8">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8">
           Passionate about <span className="text-gradient">intelligent systems</span>
         </h3>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
           {/* Interactive terminal */}
           <InteractiveTerminal />
 
@@ -21,7 +21,7 @@ const AboutSection = () => {
               <span className="w-3 h-3 rounded-full bg-[#CCCCCC]/70" />
               <span className="ml-2 text-xs text-muted-foreground">help</span>
             </div>
-            <div className="p-5 space-y-3 text-muted-foreground">
+            <div className="p-4 sm:p-5 space-y-3 text-muted-foreground text-xs sm:text-sm">
               <p>
                 <span className="text-primary">$</span>{" "}
                 <span className="text-foreground">/skill</span> - for skills
