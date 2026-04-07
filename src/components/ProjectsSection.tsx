@@ -20,12 +20,11 @@ const projects = [
     demo: "https://musila-wheat.vercel.app/",
   },
   {
-    title: "Flux AI",
+    title: "Todo Agent",
     description:
-      "Your personal AI tool for image generation, background removal, resume review, article writing, and other creative tasks powered by advanced AI models.",
-    tags: ["AI", "Image Generation", "React", "Vercel"],
-    github: "https://github.com/import-dhruv/flux-ai",
-    demo: "https://flux-ai-puce.vercel.app",
+      "AI-powered to-do list application that manages tasks through natural language interactions using Groq's LLaMA 3.3 70B model with PostgreSQL database storage.",
+    tags: ["Node.js", "Groq", "PostgreSQL", "AI"],
+    github: "https://github.com/import-dhruv/todo-agent",
   },
   {
     title: "DataGuy",
