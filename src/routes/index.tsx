@@ -30,6 +30,19 @@ function Home() {
           <sup className="text-muted-foreground">*</sup>
         </p>
         <p className="pt-1 text-xs text-muted-foreground">*better ones.</p>
+        
+        <p className="pt-6">
+          ai research{" "}
+          <a
+            href="https://adoflabs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity"
+          >
+            @adoflabs
+          </a>
+          .
+        </p>
       </div>
 
       <SiteFooter />
