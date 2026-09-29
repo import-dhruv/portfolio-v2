@@ -21,19 +21,6 @@ function Home() {
         <Polaroid />
       </div>
 
-      <p className="mb-8 text-base text-foreground">
-        ai research{" "}
-        <a
-          href="https://adoflabs.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity"
-        >
-          @adoflabs
-        </a>
-        .
-      </p>
-
       <div className="space-y-5 text-base text-foreground">
         {lines.map((line) => (
           <p key={line}>{line}</p>
