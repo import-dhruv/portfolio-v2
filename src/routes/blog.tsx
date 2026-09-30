@@ -1,37 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import SiteFooter from "@/components/SiteFooter";
+import { getPublishedPosts } from "@/data/blogPosts";
 
 export const Route = createFileRoute("/blog")({
   component: Blog,
 });
 
-// Sample blog posts - you can replace this with actual blog data
-const blogPosts = [
-  {
-    id: 1,
-    title: "Building Intelligent Systems",
-    excerpt: "Exploring the fundamentals of creating AI systems that truly think.",
-    date: "2024-03-15",
-    slug: "building-intelligent-systems",
-  },
-  {
-    id: 2,
-    title: "Data to Decisions",
-    excerpt: "How modern ML pipelines transform raw data into actionable insights.",
-    date: "2024-02-28",
-    slug: "data-to-decisions",
-  },
-  {
-    id: 3,
-    title: "Engineering Philosophy",
-    excerpt: "Why good engineering is about removing noise, not adding features.",
-    date: "2024-02-10",
-    slug: "engineering-philosophy",
-  },
-];
-
 function Blog() {
+  const blogPosts = getPublishedPosts();
+
   return (
     <main className="mx-auto max-w-2xl px-6 pt-32 pb-20 sm:pt-40">
       <div className="mb-12">
@@ -62,7 +41,20 @@ function Blog() {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">{post.excerpt}</p>
+              <p className="text-muted-foreground mb-3">{post.excerpt}</p>
+              {post.tags && post.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <Badge
+                      key={tag}
+                      variant="secondary"
+                      className="text-xs"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              )}
             </CardContent>
           </Card>
         ))}
