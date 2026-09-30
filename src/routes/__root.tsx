@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import PillNav from "@/components/PillNav";
+import ThemeToggle from "@/components/ThemeToggle";
 
 function NotFoundComponent() {
   return (
@@ -138,8 +139,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="dark min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-background text-foreground">
         <PillNav />
+        <ThemeToggle />
         <Outlet />
       </div>
     </QueryClientProvider>
