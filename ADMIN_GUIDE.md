@@ -10,16 +10,31 @@ Complete guide to using the blog CMS admin panel.
 2. Enter the admin password
 3. Start managing your blog posts!
 
-### Default Password
+### Setting Up Password
 
-**Password:** `admin123`
+**Step 1:** Copy the example environment file
+```bash
+cp .env.example .env
+```
 
-⚠️ **IMPORTANT:** Change this password before deploying to production!
+**Step 2:** Edit `.env` and set your password
+```bash
+VITE_ADMIN_PASSWORD=your_secure_password_here
+```
 
-To change the password:
-1. Open `src/lib/auth.ts`
-2. Change the `ADMIN_PASSWORD` value
-3. Use a strong, unique password
+**Step 3:** Restart the development server
+```bash
+bun run dev
+```
+
+### Current Password
+
+The password is stored in `.env` file (not committed to git for security).
+
+⚠️ **IMPORTANT:** 
+- Never commit `.env` to version control
+- Use a strong, unique password in production
+- The `.env` file is already in `.gitignore`
 
 ## 📝 Managing Blog Posts
 

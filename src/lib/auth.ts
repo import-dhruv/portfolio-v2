@@ -1,9 +1,11 @@
 /**
  * Simple authentication for admin panel
- * In production, use proper authentication service
+ * Password is stored in environment variable for security
  */
 
-const ADMIN_PASSWORD = "admin123"; // Change this to your secure password
+// Get admin password from environment variable
+// In production, use a proper authentication service
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || "admin123";
 
 export function isAuthenticated(): boolean {
   if (typeof window === "undefined") return false;
