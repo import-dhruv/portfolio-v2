@@ -1,15 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SiteFooter from "@/components/SiteFooter";
-import { getPublishedPosts } from "@/data/blogPosts";
+import { getBlogPosts, initializeBlogPosts } from "@/lib/blogStorage";
+import { blogPosts as defaultPosts, type BlogPost } from "@/data/blogPosts";
 
 export const Route = createFileRoute("/blog")({
   component: Blog,
 });
 
 function Blog() {
-  const blogPosts = getPublishedPosts();
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    // Initialize with default posts if none exist
+    initializeBlogPosts(defaultPosts);
+    
+    // Load posts from storage
+    const posts = getBlogPosts()
+      .filter((post) => post.published !== false)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    
+    setBlogPosts(posts);
+  }, []);
 
   return (
     <main className="mx-auto max-w-2xl px-6 pt-32 pb-20 sm:pt-40">

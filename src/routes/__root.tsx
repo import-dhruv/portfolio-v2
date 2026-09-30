@@ -138,7 +138,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="dark min-h-screen bg-background text-foreground">
         <PillNav />
         <Outlet />
       </div>
