@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 const items = [
   { to: "/", label: "home" },
+  { to: "/blog", label: "blog" },
 ] as const;
 
 export default function PillNav() {
