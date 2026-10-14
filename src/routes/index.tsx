@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Polaroid from "@/components/Polaroid";
 import SiteFooter from "@/components/SiteFooter";
+import { Button } from "@/components/ui/button";
+import { FileText } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -30,6 +32,24 @@ function Home() {
           <sup className="text-muted-foreground">*</sup>
         </p>
         <p className="pt-1 text-xs text-muted-foreground">*better ones.</p>
+      </div>
+
+      <div className="mt-8">
+        <Button
+          asChild
+          variant="default"
+          className="gap-2"
+        >
+          <a
+            href="/resume.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FileText className="h-4 w-4" />
+            Download Resume
+          </a>
+        </Button>
       </div>
 
       <SiteFooter />
