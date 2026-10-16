@@ -95,11 +95,11 @@ function Admin() {
 
   if (!authenticated) {
     return (
-      <main className="mx-auto max-w-md px-6 pt-32 pb-20">
+      <main className="mx-auto max-w-md px-4 sm:px-6 pt-24 sm:pt-32 pb-12 sm:pb-20">
         <Card>
           <CardHeader>
-            <CardTitle>Admin Login</CardTitle>
-            <CardDescription>Enter password to access admin panel</CardDescription>
+            <CardTitle className="text-xl sm:text-2xl">Admin Login</CardTitle>
+            <CardDescription className="text-sm sm:text-base">Enter password to access admin panel</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
@@ -129,39 +129,39 @@ function Admin() {
   }
 
   return (
-    <main className="mx-auto max-w-4xl px-6 pt-32 pb-20">
-      <div className="flex items-center justify-between mb-8">
+    <main className="mx-auto max-w-4xl px-4 sm:px-6 pt-24 sm:pt-32 pb-12 sm:pb-20">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 sm:mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Admin Panel</h1>
-          <p className="text-muted-foreground mt-1">Manage your blog posts</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Admin Panel</h1>
+          <p className="text-sm sm:text-base text-muted-foreground mt-1">Manage your blog posts</p>
         </div>
         <div className="flex gap-2">
-          <Button onClick={handleCreate}>
+          <Button onClick={handleCreate} className="flex-1 sm:flex-none">
             <Plus className="h-4 w-4 mr-2" />
             New Post
           </Button>
-          <Button onClick={handleLogout} variant="outline">
+          <Button onClick={handleLogout} variant="outline" className="flex-1 sm:flex-none">
             <LogOut className="h-4 w-4 mr-2" />
             Logout
           </Button>
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {posts.map((post) => (
           <Card key={post.id}>
-            <CardHeader>
-              <div className="flex items-start justify-between">
+            <CardHeader className="pb-3 sm:pb-6">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <CardTitle className="text-xl">{post.title}</CardTitle>
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    <CardTitle className="text-lg sm:text-xl">{post.title}</CardTitle>
                     {!post.published && (
-                      <Badge variant="secondary">Draft</Badge>
+                      <Badge variant="secondary" className="text-xs">Draft</Badge>
                     )}
                   </div>
-                  <CardDescription>{post.excerpt}</CardDescription>
+                  <CardDescription className="text-sm">{post.excerpt}</CardDescription>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 sm:ml-2">
                   <Button
                     onClick={() => handleEdit(post)}
                     variant="ghost"
@@ -180,10 +180,10 @@ function Admin() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
                 <span>{new Date(post.date).toLocaleDateString()}</span>
                 {post.tags && post.tags.length > 0 && (
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 flex-wrap">
                     {post.tags.map((tag) => (
                       <Badge key={tag} variant="outline" className="text-xs">
                         {tag}
@@ -199,8 +199,8 @@ function Admin() {
 
       {posts.length === 0 && (
         <Card>
-          <CardContent className="py-12 text-center">
-            <p className="text-muted-foreground">No posts yet. Create your first post!</p>
+          <CardContent className="py-8 sm:py-12 text-center">
+            <p className="text-sm sm:text-base text-muted-foreground">No posts yet. Create your first post!</p>
           </CardContent>
         </Card>
       )}

@@ -26,26 +26,26 @@ function Blog() {
   }, []);
 
   return (
-    <main className="mx-auto max-w-2xl px-6 pt-32 pb-20 sm:pt-40">
-      <div className="mb-12">
-        <h1 className="text-3xl font-bold text-foreground mb-2">blog</h1>
-        <p className="text-muted-foreground">
+    <main className="mx-auto max-w-2xl px-4 sm:px-6 pt-24 sm:pt-32 pb-12 sm:pb-20">
+      <div className="mb-8 sm:mb-12">
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">blog</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">
           thoughts on ai, engineering, and building better systems.
         </p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {blogPosts.map((post) => (
           <Card
             key={post.id}
             className="border-border hover:border-foreground/20 transition-colors cursor-pointer"
           >
-            <CardHeader>
-              <div className="flex items-start justify-between gap-4">
-                <CardTitle className="text-xl font-semibold">
+            <CardHeader className="pb-3 sm:pb-6">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
+                <CardTitle className="text-lg sm:text-xl font-semibold">
                   {post.title}
                 </CardTitle>
-                <time className="text-sm text-muted-foreground whitespace-nowrap">
+                <time className="text-xs sm:text-sm text-muted-foreground whitespace-nowrap">
                   {new Date(post.date).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "short",
@@ -55,7 +55,7 @@ function Blog() {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-3">{post.excerpt}</p>
+              <p className="text-sm sm:text-base text-muted-foreground mb-3">{post.excerpt}</p>
               {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
@@ -76,7 +76,7 @@ function Blog() {
 
       {blogPosts.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-muted-foreground">no posts yet. check back soon.</p>
+          <p className="text-sm sm:text-base text-muted-foreground">no posts yet. check back soon.</p>
         </div>
       )}
 

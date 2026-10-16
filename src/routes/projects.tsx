@@ -14,15 +14,15 @@ function Projects() {
   const projects = getAllProjects();
 
   return (
-    <main className="mx-auto max-w-4xl px-6 pt-32 pb-20 sm:pt-40">
-      <div className="mb-12">
-        <h1 className="text-3xl font-bold text-foreground mb-2">projects</h1>
-        <p className="text-muted-foreground">
+    <main className="mx-auto max-w-4xl px-4 sm:px-6 pt-24 sm:pt-32 pb-12 sm:pb-20">
+      <div className="mb-8 sm:mb-12">
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">projects</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">
           things i've built and problems i've solved.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
         {projects.map((project) => (
           <Card
             key={project.id}
@@ -31,34 +31,35 @@ function Projects() {
             <CardHeader>
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1">
-                  <CardTitle className="text-xl mb-2">
+                  <CardTitle className="text-lg sm:text-xl mb-2">
                     {project.title}
                   </CardTitle>
                   {project.featured && (
-                    <Badge variant="secondary" className="mb-2">
+                    <Badge variant="secondary" className="mb-2 text-xs">
                       Featured
                     </Badge>
                   )}
                 </div>
               </div>
-              <CardDescription className="text-base">
+              <CardDescription className="text-sm sm:text-base">
                 {project.description}
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1 flex flex-col justify-between">
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                 {project.tags.map((tag) => (
                   <Badge key={tag} variant="outline" className="text-xs">
                     {tag}
                   </Badge>
                 ))}
               </div>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 {project.link && (
                   <Button
                     asChild
                     variant="default"
                     size="sm"
+                    className="w-full sm:w-auto"
                   >
                     <a
                       href={project.link}
@@ -75,6 +76,7 @@ function Projects() {
                     asChild
                     variant="outline"
                     size="sm"
+                    className="w-full sm:w-auto"
                   >
                     <a
                       href={project.github}
@@ -94,7 +96,7 @@ function Projects() {
 
       {projects.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-muted-foreground">no projects yet. check back soon.</p>
+          <p className="text-sm sm:text-base text-muted-foreground">no projects yet. check back soon.</p>
         </div>
       )}
 
