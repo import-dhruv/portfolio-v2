@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import Polaroid from "@/components/Polaroid";
+import ExperienceSection from "@/components/ExperienceSection";
 import { Button } from "@/components/ui/button";
 import { FileText, Mail, Github, Linkedin } from "lucide-react";
 import { getAllProjects } from "@/data/projects";
@@ -18,13 +19,13 @@ function Home() {
   useEffect(() => {
     // Initialize with default posts if none exist
     initializeBlogPosts(defaultPosts);
-    
+
     // Load posts from storage
     const posts = getBlogPosts()
       .filter((post) => post.published !== false)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, 5); // Show only 5 most recent
-    
+
     setWritings(posts);
   }, []);
 
@@ -39,14 +40,19 @@ function Home() {
         <h2 className="text-2xl font-bold text-foreground mb-6">about me</h2>
         <div className="space-y-4 text-base text-foreground/90">
           <p>
-            i'm dhruv patel, an ai engineer. i'm interested, broadly, in computer
-            science, mathematics, and the intersection of these fields. recently,
-            i've been interested in intelligent systems and machine learning at scale.
+            i'm dhruv patel, an ai engineer. i'm interested, broadly, in computer science,
+            mathematics, and the intersection of these fields. recently, i've been working on
+            intelligent systems and the evaluation of coding agents.
           </p>
           <p>
-            i currently work on ai research and development. i previously worked on
-            data pipelines and ml infrastructure. i also run a technical blog where
-            i write about systems, engineering, and ai.
+            i most recently worked at ADOFLABS — first as a software engineer on a full-stack
+            employee intelligence platform, then as an applied researcher on real-time evaluation
+            for ai voice agents. before that i worked on data pipelines and ml infrastructure. i
+            also run a technical blog where i write about systems, engineering, and ai.
+          </p>
+          <p>
+            currently i'm looking for new work in ai and ml engineering. if that sounds like a fit,
+            i'd love to hear from you.
           </p>
         </div>
 
@@ -59,6 +65,9 @@ function Home() {
           </Button>
         </div>
       </section>
+
+      {/* Experience Section */}
+      <ExperienceSection />
 
       {/* Work Section */}
       <section id="work" className="mb-20">
@@ -99,9 +108,7 @@ function Home() {
             </li>
           ))}
           {writings.length === 0 && (
-            <li className="text-muted-foreground text-sm">
-              no posts yet. check back soon.
-            </li>
+            <li className="text-muted-foreground text-sm">no posts yet. check back soon.</li>
           )}
         </ul>
       </section>
@@ -112,15 +119,10 @@ function Home() {
         <div className="space-y-4 text-foreground/90">
           <p>
             you can reach me at{" "}
-            <code className="px-2 py-1 bg-muted rounded text-sm">
-              x@gmail.com
-            </code>{" "}
-            where{" "}
-            <code className="px-2 py-1 bg-muted rounded text-sm">
-              x = dhruvvcodess
-            </code>
+            <code className="px-2 py-1 bg-muted rounded text-sm">x@gmail.com</code> where{" "}
+            <code className="px-2 py-1 bg-muted rounded text-sm">x = dhruvvcodess</code>
           </p>
-          
+
           <div className="flex gap-4 pt-4">
             <a
               href="mailto:dhruvvcodess@gmail.com"

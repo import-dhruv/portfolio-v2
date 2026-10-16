@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 const items = [
   { to: "/#about", label: "about me" },
+  { to: "/#experience", label: "experience" },
   { to: "/#work", label: "work" },
   { to: "/#writing", label: "writing" },
   { to: "/#contact", label: "contact" },

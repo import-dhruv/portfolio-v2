@@ -1,6 +1,6 @@
 /**
  * Projects Data
- * 
+ *
  * Add your projects here. Each project should have:
  * - id: unique number
  * - title: project name
@@ -25,27 +25,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 1,
-    title: "AI Research Platform",
-    description: "Built an intelligent research platform using LLMs and vector databases to help researchers discover insights faster.",
-    tags: ["Python", "LangChain", "FastAPI", "React"],
-    github: "https://github.com/yourusername/project",
+    id: 4,
+    title: "dynamion",
+    description:
+      "Open-source evaluation harness for long-horizon coding tasks: hermetic Docker grading, pluggable agent adapters, and verifiable graders.",
+    tags: ["Python", "Docker", "LLM Evaluation", "Agents", "Pytest"],
+    github: "https://github.com/import-dhruv/dynamion",
     featured: true,
-  },
-  {
-    id: 2,
-    title: "Data Pipeline Orchestrator",
-    description: "Designed and implemented a scalable data pipeline processing millions of records daily with real-time monitoring.",
-    tags: ["Python", "Apache Airflow", "PostgreSQL", "Docker"],
-    link: "https://example.com",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Neural Network Framework",
-    description: "Created a lightweight neural network framework from scratch for educational purposes, implementing backpropagation and optimization algorithms.",
-    tags: ["Python", "NumPy", "Machine Learning"],
-    github: "https://github.com/yourusername/project",
   },
 ];
 
