@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import Polaroid from "@/components/Polaroid";
 import ExperienceSection from "@/components/ExperienceSection";
 import { Button } from "@/components/ui/button";
-import { FileText, Mail, Github, Linkedin } from "lucide-react";
+import { FileText, Mail, Github, Linkedin, Twitter } from "lucide-react";
 import { getAllProjects } from "@/data/projects";
 import { getAllArticles } from "@/data/articles";
 
@@ -130,6 +130,15 @@ function Home() {
               <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
             </a>
             <a
+              href="https://x.com/importdhruv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-foreground/70 transition-colors"
+              aria-label="X (Twitter)"
+            >
+              <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />
+            </a>
+            <a
               href="https://github.com/import-dhruv"
               target="_blank"
               rel="noopener noreferrer"
@@ -139,7 +148,7 @@ function Home() {
               <Github className="h-5 w-5 sm:h-6 sm:w-6" />
             </a>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/dhruv-patel-2562bb369/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-foreground/70 transition-colors"
