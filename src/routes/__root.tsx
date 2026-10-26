@@ -12,15 +12,14 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import PillNav from "@/components/PillNav";
+import { Analytics } from "@vercel/analytics/react";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-6xl font-medium text-foreground">404</h1>
-        <p className="mt-4 text-sm text-muted-foreground">
-          this page doesn't exist.
-        </p>
+        <p className="mt-4 text-sm text-muted-foreground">this page doesn't exist.</p>
         <div className="mt-6">
           <Link
             to="/"
@@ -44,9 +43,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-medium text-foreground">
-          something went wrong.
-        </h1>
+        <h1 className="text-xl font-medium text-foreground">something went wrong.</h1>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <button
             onClick={() => {
@@ -96,8 +93,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Dhruv Patel is an AI engineer building intelligent systems, LLM tools, and quiet software that helps data become decisions.",
       },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e0eef830-6a8b-4714-a75b-643cf5a5aeb1/id-preview-7e080f7f--ba12d166-1c98-4a13-ae33-995d568e805e.lovable.app-1783760430266.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e0eef830-6a8b-4714-a75b-643cf5a5aeb1/id-preview-7e080f7f--ba12d166-1c98-4a13-ae33-995d568e805e.lovable.app-1783760430266.png" },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e0eef830-6a8b-4714-a75b-643cf5a5aeb1/id-preview-7e080f7f--ba12d166-1c98-4a13-ae33-995d568e805e.lovable.app-1783760430266.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e0eef830-6a8b-4714-a75b-643cf5a5aeb1/id-preview-7e080f7f--ba12d166-1c98-4a13-ae33-995d568e805e.lovable.app-1783760430266.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -129,6 +134,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <Analytics />
         <Scripts />
       </body>
     </html>
