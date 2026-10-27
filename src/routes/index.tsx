@@ -4,7 +4,6 @@ import ExperienceSection from "@/components/ExperienceSection";
 import { Button } from "@/components/ui/button";
 import { FileText, Mail, Github, Linkedin, Twitter } from "lucide-react";
 import { getAllProjects } from "@/data/projects";
-import { getAllArticles } from "@/data/articles";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -12,7 +11,6 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const projects = getAllProjects();
-  const articles = getAllArticles();
 
   return (
     <main className="mx-auto max-w-3xl px-4 sm:px-6 pt-24 sm:pt-32 pb-12 sm:pb-20">
@@ -80,30 +78,7 @@ function Home() {
       {/* Writing Section */}
       <section id="writing" className="mb-16 sm:mb-20">
         <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">writing</h2>
-        <ul className="space-y-2 sm:space-y-3">
-          {articles.map((article) => (
-            <li key={article.id} className="break-words">
-              <a
-                href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-foreground/70 transition-colors text-sm sm:text-base"
-              >
-                {article.title.toLowerCase()}
-              </a>
-              {article.description && (
-                <span className="text-muted-foreground ml-2 text-xs sm:text-sm block sm:inline mt-1 sm:mt-0">
-                  ({article.description.toLowerCase().slice(0, 60)}...)
-                </span>
-              )}
-            </li>
-          ))}
-          {articles.length === 0 && (
-            <li className="text-muted-foreground text-xs sm:text-sm">
-              no articles yet. check back soon.
-            </li>
-          )}
-        </ul>
+        <p className="text-sm sm:text-base text-muted-foreground">coming soon...</p>
       </section>
 
       {/* Contact Section */}
