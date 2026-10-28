@@ -83,7 +83,7 @@ function Home() {
       {/* Writing Section */}
       <section id="writing" className="mb-16 sm:mb-20">
         <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">writing</h2>
-        <ul className="space-y-2 sm:space-y-3">
+        <ul className="space-y-2 sm:space-y-3 list-disc list-inside">
           {writings.map((writing) => (
             <li key={writing.label}>
               <a
