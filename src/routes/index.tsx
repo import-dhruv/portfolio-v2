@@ -59,24 +59,10 @@ function Home() {
       {/* Work Section */}
       <section id="work" className="mb-16 sm:mb-20">
         <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">work</h2>
-        <ul className="space-y-2 sm:space-y-3">
-          {projects.map((project) => (
-            <li key={project.id} className="break-words">
-              <a
-                href={project.link || project.github || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-foreground/70 transition-colors text-sm sm:text-base"
-              >
-                {project.title.toLowerCase()}
-              </a>
-              {project.description && (
-                <span className="text-muted-foreground ml-2 text-xs sm:text-sm block sm:inline mt-1 sm:mt-0">
-                  ({project.description.toLowerCase().slice(0, 60)}...)
-                </span>
-              )}
-            </li>
-          ))}
+        <ul className="space-y-2 sm:space-y-3 list-disc list-inside">
+          <li className="text-foreground text-sm sm:text-base">projects</li>
+          <li className="text-foreground text-sm sm:text-base">open source</li>
+          <li className="text-foreground text-sm sm:text-base">paper implementation</li>
         </ul>
       </section>
 
