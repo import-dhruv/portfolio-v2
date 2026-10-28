@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
 const workItems = [
   {
     label: "projects",
-    href: "https://github.com/import-dhruv/dynamion",
+    href: "/projects",
   },
   { label: "open source", href: "#" },
   { label: "paper implementation", href: "#" },
@@ -71,8 +71,8 @@ function Home() {
             <li key={item.label} className="text-base text-foreground">
               <a
                 href={item.href}
-                target={item.href !== "#" ? "_blank" : undefined}
-                rel={item.href !== "#" ? "noopener noreferrer" : undefined}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className={
                   item.href !== "#"
                     ? "hover:text-foreground/70 transition-colors underline underline-offset-4"
