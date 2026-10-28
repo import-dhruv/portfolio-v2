@@ -15,6 +15,7 @@ A minimal, elegant portfolio website built with modern web technologies. Feature
 ## 📦 Installation
 
 1. **Clone the repository**:
+
    ```bash
    git clone <your-repo-url>
    cd "Portfolio Reimagined"
@@ -56,11 +57,13 @@ bun run preview
 This project is optimized for Vercel deployment:
 
 1. **Install Vercel CLI** (optional):
+
    ```bash
    bun add -g vercel
    ```
 
 2. **Deploy**:
+
    ```bash
    vercel
    ```
@@ -70,6 +73,7 @@ This project is optimized for Vercel deployment:
 ### Configuration
 
 The project includes a `vercel.json` configuration file that specifies:
+
 - Build command: `bun run build`
 - Output directory: `.output/public`
 

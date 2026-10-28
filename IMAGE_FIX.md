@@ -47,12 +47,14 @@ The fix has been applied and the dev server has reloaded. Your avatar image shou
 ## 🔄 How to Replace Your Avatar
 
 ### Quick Method:
+
 1. Get a square image (640x640px recommended)
 2. Save it as `avatar.jpg`
 3. Replace the file at `src/assets/avatar.jpg`
 4. The page will auto-reload!
 
 ### Detailed Guide:
+
 See `CUSTOMIZATION.md` for step-by-step instructions and best practices.
 
 ---
@@ -86,6 +88,7 @@ See `CUSTOMIZATION.md` for step-by-step instructions and best practices.
    - Check the Network tab for failed requests
 
 3. **Restart dev server**:
+
    ```bash
    # Stop the server (Ctrl+C in the terminal)
    # Then start again:
@@ -93,6 +96,7 @@ See `CUSTOMIZATION.md` for step-by-step instructions and best practices.
    ```
 
 4. **Clear build cache**:
+
    ```bash
    rm -rf .output .tanstack node_modules/.vite
    bun run dev
@@ -106,6 +110,7 @@ See `CUSTOMIZATION.md` for step-by-step instructions and best practices.
 ### Still having issues?
 
 Check these files for any syntax errors:
+
 - `src/components/Polaroid.tsx` (component using the image)
 - `src/vite-env.d.ts` (TypeScript declarations)
 - `src/routes/index.tsx` (home page)
@@ -136,17 +141,17 @@ When you deploy to Vercel, the image will work perfectly!
 
 ## ✨ Summary
 
-| Item | Status |
-|------|--------|
-| Avatar image fixed | ✅ Done |
-| TypeScript types added | ✅ Done |
-| Dev server reloaded | ✅ Done |
-| Image accessible | ✅ Verified (HTTP 200) |
-| Build compatibility | ✅ Confirmed |
-| Deployment ready | ✅ Yes |
+| Item                   | Status                 |
+| ---------------------- | ---------------------- |
+| Avatar image fixed     | ✅ Done                |
+| TypeScript types added | ✅ Done                |
+| Dev server reloaded    | ✅ Done                |
+| Image accessible       | ✅ Verified (HTTP 200) |
+| Build compatibility    | ✅ Confirmed           |
+| Deployment ready       | ✅ Yes                 |
 
 **Your portfolio is now fully functional with a working avatar image!** 🎉
 
 ---
 
-*Last updated: July 11, 2026*
+_Last updated: July 11, 2026_

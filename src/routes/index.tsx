@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import Polaroid from "@/components/Polaroid";
 import ExperienceSection from "@/components/ExperienceSection";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,11 @@ import { getAllProjects } from "@/data/projects";
 export const Route = createFileRoute("/")({
   component: Home,
 });
+
+const writings = [
+  { label: "competitive programming", href: "#" },
+  { label: "ai", href: "#" },
+];
 
 function Home() {
   const projects = getAllProjects();
@@ -78,7 +83,18 @@ function Home() {
       {/* Writing Section */}
       <section id="writing" className="mb-16 sm:mb-20">
         <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">writing</h2>
-        <p className="text-sm sm:text-base text-muted-foreground">coming soon...</p>
+        <ul className="space-y-2 sm:space-y-3">
+          {writings.map((writing) => (
+            <li key={writing.label}>
+              <a
+                href={writing.href}
+                className="text-foreground hover:text-foreground/70 transition-colors text-sm sm:text-base"
+              >
+                {writing.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Contact Section */}

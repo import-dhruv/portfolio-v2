@@ -1,6 +1,7 @@
 # 🚀 Quick Start Guide
 
 ## ✅ Current Status
+
 - ✅ Dependencies installed (484 packages)
 - ✅ Dev server running at http://localhost:8080/
 - ✅ Build tested and working
@@ -11,6 +12,7 @@
 ## 🎯 Deploy to Vercel in 3 Steps
 
 ### Step 1: Push to GitHub
+
 ```bash
 git init
 git add .
@@ -21,12 +23,14 @@ git push -u origin main
 ```
 
 ### Step 2: Connect to Vercel
+
 1. Go to https://vercel.com
 2. Click "Add New..." → "Project"
 3. Import your GitHub repository
 4. Vercel auto-detects everything from `vercel.json`
 
 ### Step 3: Deploy
+
 1. Click "Deploy"
 2. Wait 2-3 minutes
 3. **Done!** Your site is live 🎉
@@ -36,17 +40,21 @@ git push -u origin main
 ## 🛠️ Local Development
 
 ### Start Development Server
+
 ```bash
 bun run dev
 ```
+
 Opens at: http://localhost:8080/
 
 ### Build for Production
+
 ```bash
 bun run build
 ```
 
 ### Preview Production Build
+
 ```bash
 bun run preview
 ```

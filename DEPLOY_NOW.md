@@ -5,6 +5,7 @@
 Your portfolio has been tested and is **100% ready for Vercel deployment!**
 
 Build completed in 1.38s with:
+
 - ✅ Client bundle: 344 KB (gzipped: 108 KB)
 - ✅ CSS bundle: 69 KB (gzipped: 11.6 KB)
 - ✅ Avatar image: 764 KB (your cute drawing!)
@@ -75,13 +76,14 @@ Follow the prompts and your site will be live!
 ✅ Vercel config present  
 ✅ All dependencies installed  
 ✅ No TypeScript errors  
-✅ No build warnings  
+✅ No build warnings
 
 ---
 
 ## 🎨 What's Deployed
 
 Your **single-page portfolio** with:
+
 - Your cute hand-drawn avatar in a polaroid frame
 - "Hey, I'm Dhruv 👋" sticker
 - Manifesto statements about building intelligent systems
@@ -94,6 +96,7 @@ Your **single-page portfolio** with:
 ## ⚙️ Vercel Configuration
 
 Your `vercel.json` is configured with:
+
 ```json
 {
   "buildCommand": "bun run build",
@@ -102,6 +105,7 @@ Your `vercel.json` is configured with:
 ```
 
 **This tells Vercel:**
+
 - Use Bun to build the project
 - Output files to `.output/public`
 - Everything else is automatic!
@@ -111,10 +115,12 @@ Your `vercel.json` is configured with:
 ## 🌐 After Deployment
 
 Once deployed, your site will be available at:
+
 - **Production URL**: `https://your-project.vercel.app`
 - **Custom domain**: You can add your own domain in Vercel settings
 
 ### What Happens on Deploy:
+
 1. Vercel clones your repository
 2. Installs dependencies with Bun
 3. Runs `bun run build`
@@ -122,6 +128,7 @@ Once deployed, your site will be available at:
 5. Your site goes live!
 
 ### Automatic Updates:
+
 - Every push to `main` → Auto-deploys to production
 - Pull requests → Get preview URLs
 - Branches → Get preview URLs
@@ -188,6 +195,7 @@ A: Change `vercel.json` buildCommand to `npm run build`
 ## 📊 Performance
 
 Your portfolio is optimized:
+
 - ✅ Small bundle size (108 KB gzipped)
 - ✅ Minimal CSS (11.6 KB gzipped)
 - ✅ Fast server-side rendering (SSR)

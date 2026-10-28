@@ -22,20 +22,21 @@ Edit `src/data/projects.ts` and add your project:
 
 ### Project Properties
 
-| Property | Type | Required | Description |
-|----------|------|----------|-------------|
-| `id` | number | ✅ Yes | Unique identifier |
-| `title` | string | ✅ Yes | Project name |
-| `description` | string | ✅ Yes | What the project does |
-| `tags` | string[] | ✅ Yes | Technologies used |
-| `link` | string | ❌ No | Live demo URL |
-| `github` | string | ❌ No | GitHub repository URL |
-| `image` | string | ❌ No | Project image (future use) |
-| `featured` | boolean | ❌ No | Highlight this project |
+| Property      | Type     | Required | Description                |
+| ------------- | -------- | -------- | -------------------------- |
+| `id`          | number   | ✅ Yes   | Unique identifier          |
+| `title`       | string   | ✅ Yes   | Project name               |
+| `description` | string   | ✅ Yes   | What the project does      |
+| `tags`        | string[] | ✅ Yes   | Technologies used          |
+| `link`        | string   | ❌ No    | Live demo URL              |
+| `github`      | string   | ❌ No    | GitHub repository URL      |
+| `image`       | string   | ❌ No    | Project image (future use) |
+| `featured`    | boolean  | ❌ No    | Highlight this project     |
 
 ### Example Projects
 
 **Web Application:**
+
 ```typescript
 {
   id: 5,
@@ -49,6 +50,7 @@ Edit `src/data/projects.ts` and add your project:
 ```
 
 **Machine Learning Project:**
+
 ```typescript
 {
   id: 6,
@@ -61,6 +63,7 @@ Edit `src/data/projects.ts` and add your project:
 ```
 
 **Open Source Contribution:**
+
 ```typescript
 {
   id: 7,
@@ -78,6 +81,7 @@ Edit `src/data/projects.ts` and add your project:
 **Step 1:** Prepare your resume as a PDF file
 
 **Step 2:** Replace the placeholder file
+
 ```bash
 # Remove the placeholder
 rm public/resume.pdf
@@ -91,6 +95,7 @@ cp /path/to/your/resume.pdf public/resume.pdf
 ### Resume Button
 
 The resume button appears on the home page with:
+
 - 📄 File icon
 - "Download Resume" text
 - Automatic download when clicked
@@ -101,6 +106,7 @@ The resume button appears on the home page with:
 Edit `src/routes/index.tsx` to customize:
 
 **Change button text:**
+
 ```typescript
 <Button>
   <FileText className="h-4 w-4" />
@@ -109,6 +115,7 @@ Edit `src/routes/index.tsx` to customize:
 ```
 
 **Change button style:**
+
 ```typescript
 <Button variant="outline">  // or "ghost", "secondary"
   Download Resume
@@ -116,6 +123,7 @@ Edit `src/routes/index.tsx` to customize:
 ```
 
 **Add multiple resume formats:**
+
 ```typescript
 <div className="flex gap-3">
   <Button asChild>
@@ -130,6 +138,7 @@ Edit `src/routes/index.tsx` to customize:
 ## 🎨 Navigation
 
 The navigation now includes:
+
 - **home** - Your main page with resume button
 - **projects** - Showcase of your work
 - **blog** - Your blog posts
@@ -152,6 +161,7 @@ portfolio-v2/
 ## 💡 Tips
 
 ### Projects
+
 1. **Start with featured projects** - Highlight your best work
 2. **Keep descriptions concise** - 1-2 sentences max
 3. **Use relevant tags** - Technologies recruiters search for
@@ -159,6 +169,7 @@ portfolio-v2/
 5. **Link GitHub repos** - Demonstrates your code quality
 
 ### Resume
+
 1. **Keep it updated** - Replace when you add new skills/experience
 2. **Use a professional format** - Clean, ATS-friendly design
 3. **Optimize file size** - Compress PDF if over 1MB
@@ -168,6 +179,7 @@ portfolio-v2/
 ## 🔄 Quick Updates
 
 ### Add a project quickly:
+
 ```bash
 # Edit the projects file
 nano src/data/projects.ts
@@ -177,6 +189,7 @@ nano src/data/projects.ts
 ```
 
 ### Update resume quickly:
+
 ```bash
 # Replace the PDF
 cp ~/Downloads/my-new-resume.pdf public/resume.pdf
@@ -187,18 +200,21 @@ cp ~/Downloads/my-new-resume.pdf public/resume.pdf
 ## 🎯 Best Practices
 
 ### Project Descriptions
+
 - ✅ Focus on impact and results
 - ✅ Mention specific technologies
 - ✅ Keep it under 150 characters
 - ✅ Use action verbs (built, designed, implemented)
 
 ### Tags
+
 - ✅ Use exact technology names
 - ✅ Include frameworks and tools
 - ✅ 3-6 tags per project is ideal
 - ✅ Order by importance
 
 ### Links
+
 - ✅ Always test your links
 - ✅ Use HTTPS when available
 - ✅ Make sure demos are live
@@ -207,6 +223,7 @@ cp ~/Downloads/my-new-resume.pdf public/resume.pdf
 ## 📱 Features
 
 ### Projects Page
+
 - Grid layout (2 columns on desktop)
 - "Featured" badges for highlights
 - Technology tags
@@ -214,6 +231,7 @@ cp ~/Downloads/my-new-resume.pdf public/resume.pdf
 - Responsive design
 
 ### Resume Button
+
 - Prominent placement on home page
 - Icon for visual clarity
 - Download attribute for immediate save
@@ -222,6 +240,7 @@ cp ~/Downloads/my-new-resume.pdf public/resume.pdf
 ## 🚀 What's Next?
 
 Consider adding:
+
 - Project images/screenshots
 - Case studies for featured projects
 - Filter projects by technology

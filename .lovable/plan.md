@@ -23,6 +23,7 @@ Each is its own TanStack route file with unique `head()` metadata. Shared floati
 ## Content mapping (from the zip)
 
 **Home (`/`)** — polaroid avatar + sticker, then short lines:
+
 - "i build intelligent systems."
 - "i work on models that think."
 - "i help data become decisions."

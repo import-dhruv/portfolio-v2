@@ -8,7 +8,7 @@ The avatar image is displayed on the home page in a polaroid-style frame.
 
 1. **Replace the image**:
    - Find a square image (recommended: 640x640px or larger)
-   - Save it as `avatar.jpg` 
+   - Save it as `avatar.jpg`
    - Replace the file at: `src/assets/avatar.jpg`
 
 2. **The dev server will auto-reload** - check http://localhost:8080/
@@ -21,7 +21,7 @@ The avatar image is displayed on the home page in a polaroid-style frame.
    ```tsx
    // Change this line:
    import avatarImg from "@/assets/avatar.jpg";
-   
+
    // To:
    import avatarImg from "@/assets/my-photo.jpg";
    ```
@@ -42,6 +42,7 @@ The avatar image is displayed on the home page in a polaroid-style frame.
 **File**: `src/components/SiteFooter.tsx`
 
 Update email and social links:
+
 ```tsx
 <a href="mailto:your-email@example.com">
   your-email@example.com
@@ -61,6 +62,7 @@ Update email and social links:
 **File**: `src/routes/index.tsx`
 
 Update your manifesto statements:
+
 ```tsx
 const lines = [
   "i build intelligent systems.",
@@ -70,10 +72,11 @@ const lines = [
 ```
 
 Update the greeting sticker:
+
 ```tsx
 // In src/components/Polaroid.tsx
 <span className="text-lg leading-none text-foreground">
-  Hey, I'm Dhruv  {/* Change name here */}
+  Hey, I'm Dhruv {/* Change name here */}
 </span>
 ```
 
@@ -100,6 +103,7 @@ const projects = [
 ```
 
 **Tips**:
+
 - Keep descriptions to one line for consistency
 - Use 2-4 tags per project
 - Demo link is optional (remove if not applicable)
@@ -114,19 +118,20 @@ Modify the `groups` array:
 
 ```tsx
 const groups = [
-  { 
-    title: "languages", 
-    items: ["Python", "TypeScript", "JavaScript"] 
+  {
+    title: "languages",
+    items: ["Python", "TypeScript", "JavaScript"],
   },
-  { 
-    title: "your category", 
-    items: ["Tool 1", "Tool 2", "Tool 3"] 
+  {
+    title: "your category",
+    items: ["Tool 1", "Tool 2", "Tool 3"],
   },
   // Add more groups...
 ];
 ```
 
 **Tips**:
+
 - Keep category titles lowercase for consistency
 - Order skills by proficiency or preference
 - Group related technologies together
@@ -143,11 +148,11 @@ The design uses OKLCH color space for better color management.
 
 ```css
 :root {
-  --background: oklch(0.985 0.005 85);  /* Warm off-white */
-  --foreground: oklch(0.22 0.01 60);     /* Dark text */
-  --muted: oklch(0.94 0.008 85);         /* Light gray */
+  --background: oklch(0.985 0.005 85); /* Warm off-white */
+  --foreground: oklch(0.22 0.01 60); /* Dark text */
+  --muted: oklch(0.94 0.008 85); /* Light gray */
   --muted-foreground: oklch(0.5 0.015 60); /* Muted text */
-  
+
   /* Modify these values to change colors */
 }
 ```
@@ -155,11 +160,13 @@ The design uses OKLCH color space for better color management.
 ### Understanding OKLCH
 
 `oklch(L C H)` where:
+
 - **L** = Lightness (0-1): 0 = black, 1 = white
 - **C** = Chroma (0-0.4): color intensity
 - **H** = Hue (0-360): color angle
 
 **Examples**:
+
 ```css
 /* Warmer background */
 --background: oklch(0.985 0.01 75);
@@ -180,6 +187,7 @@ The design uses OKLCH color space for better color management.
 **File**: `src/routes/__root.tsx`
 
 ### Current Fonts
+
 - **Inter** - Body text
 - **Caveat** - Handwritten sticker
 
@@ -188,6 +196,7 @@ The design uses OKLCH color space for better color management.
 1. **Find a Google Font**: Browse [fonts.google.com](https://fonts.google.com)
 
 2. **Update the font link** in `__root.tsx`:
+
    ```tsx
    {
      rel: "stylesheet",
@@ -225,12 +234,8 @@ export const Route = createFileRoute("/your-page")({
 function YourPage() {
   return (
     <main className="mx-auto max-w-xl px-6 pt-32 pb-20 sm:pt-40">
-      <h1 className="text-xl font-medium text-foreground">
-        Your Page Title
-      </h1>
-      <p className="mt-4 text-base text-foreground">
-        Your content here...
-      </p>
+      <h1 className="text-xl font-medium text-foreground">Your Page Title</h1>
+      <p className="mt-4 text-base text-foreground">Your content here...</p>
       <SiteFooter />
     </main>
   );
@@ -238,6 +243,7 @@ function YourPage() {
 ```
 
 2. **Add to navigation** in `src/components/PillNav.tsx`:
+
 ```tsx
 const items = [
   { to: "/", label: "home" },
@@ -269,6 +275,7 @@ head: () => ({
 ```
 
 **Tips**:
+
 - Keep title under 60 characters
 - Keep description under 160 characters
 - Add an Open Graph image (1200x630px) for social sharing

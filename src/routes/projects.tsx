@@ -31,9 +31,7 @@ function Projects() {
             <CardHeader>
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1">
-                  <CardTitle className="text-lg sm:text-xl mb-2">
-                    {project.title}
-                  </CardTitle>
+                  <CardTitle className="text-lg sm:text-xl mb-2">{project.title}</CardTitle>
                   {project.featured && (
                     <Badge variant="secondary" className="mb-2 text-xs">
                       Featured
@@ -55,34 +53,16 @@ function Projects() {
               </div>
               <div className="flex flex-col sm:flex-row gap-2">
                 {project.link && (
-                  <Button
-                    asChild
-                    variant="default"
-                    size="sm"
-                    className="w-full sm:w-auto"
-                  >
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                  <Button asChild variant="default" size="sm" className="w-full sm:w-auto">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Live Demo
                     </a>
                   </Button>
                 )}
                 {project.github && (
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="w-full sm:w-auto"
-                  >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                  <Button asChild variant="outline" size="sm" className="w-full sm:w-auto">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4 mr-2" />
                       GitHub
                     </a>
@@ -96,7 +76,9 @@ function Projects() {
 
       {projects.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-sm sm:text-base text-muted-foreground">no projects yet. check back soon.</p>
+          <p className="text-sm sm:text-base text-muted-foreground">
+            no projects yet. check back soon.
+          </p>
         </div>
       )}
 

@@ -7,6 +7,7 @@ Your portfolio currently uses a cartoon/illustration avatar. To use your real ph
 ### Step 1: Prepare Your Photo
 
 **Recommended specs:**
+
 - Format: PNG or JPG
 - Size: 1024x1024 pixels (square)
 - File size: Under 1MB (compress if needed)
@@ -58,12 +59,14 @@ Your avatar/photo is used in 3 places:
 ## Photo Tips
 
 ✅ **DO:**
+
 - Use a clear, well-lit photo
 - Smile and look professional
 - Ensure your face is centered
 - Use recent photo
 
 ❌ **DON'T:**
+
 - Use blurry or dark photos
 - Include multiple people
 - Use heavily filtered images
@@ -72,6 +75,7 @@ Your avatar/photo is used in 3 places:
 ## Compression Tools
 
 If your photo is too large:
+
 - [TinyPNG](https://tinypng.com) - Free online compression
 - [Squoosh](https://squoosh.app) - Google's image optimizer
 - Or use command line:

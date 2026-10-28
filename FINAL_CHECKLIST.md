@@ -14,13 +14,14 @@
 ✅ **Design**: Minimal, clean, warm aesthetic  
 ✅ **Performance**: Optimized bundles (108 KB gzipped)  
 ✅ **Vercel Config**: Present and correct  
-✅ **No Errors**: Zero TypeScript or build errors  
+✅ **No Errors**: Zero TypeScript or build errors
 
 ---
 
 ## Your Portfolio Includes
 
 ### Content
+
 - ✅ Polaroid-style avatar with cute drawing
 - ✅ "Hey, I'm Dhruv 👋" sticker
 - ✅ Manifesto statements:
@@ -32,6 +33,7 @@
   - "i think there should be fewer. *better ones."
 
 ### Contact & Social
+
 - ✅ Email: dhruvvcodess@gmail.com
 - ✅ X/Twitter: @importdhruv
 - ✅ LinkedIn: dhruv-patel-2562bb369
@@ -42,6 +44,7 @@
 ## Deploy Now (Choose One)
 
 ### Option A: GitHub + Vercel (Recommended)
+
 ```bash
 # 1. Push to GitHub
 git init
@@ -56,6 +59,7 @@ git push -u origin main
 ```
 
 ### Option B: Vercel CLI (Fastest)
+
 ```bash
 npm i -g vercel
 vercel login
@@ -79,9 +83,11 @@ vercel --prod
 ## Post-Deployment
 
 After deploying, your site will be at:
+
 - `https://your-project-name.vercel.app`
 
 Test these:
+
 - [ ] Avatar loads correctly
 - [ ] Email link works (opens mail client)
 - [ ] X/Twitter link goes to @importdhruv
@@ -104,7 +110,7 @@ Test these:
     ✅ __root.tsx (root layout)
     ✅ index.tsx (home page)
   ✅ styles.css (design system)
-  
+
 ✅ vercel.json (deployment config)
 ✅ package.json (dependencies)
 ✅ .output/public/ (built files)
@@ -115,6 +121,7 @@ Test these:
 ## Configuration Files
 
 ### vercel.json ✅
+
 ```json
 {
   "buildCommand": "bun run build",
@@ -123,6 +130,7 @@ Test these:
 ```
 
 ### package.json (scripts) ✅
+
 ```json
 {
   "dev": "vite dev",
@@ -178,11 +186,13 @@ bun run preview
 ## Need Help?
 
 📖 **Detailed Guides**:
+
 - `DEPLOY_NOW.md` - Step-by-step deployment
 - `DEPLOYMENT.md` - Comprehensive Vercel guide
 - `README.md` - Project documentation
 
 🐛 **Troubleshooting**:
+
 - Check build logs in Vercel dashboard
 - Verify `vercel.json` is present
 - Test `bun run build` locally first
@@ -199,6 +209,6 @@ Your portfolio is **production-ready** and **fully optimized**.
 
 **Last Updated**: Just now  
 **Build Status**: ✅ Success  
-**Ready**: 100%  
+**Ready**: 100%
 
 **LET'S GO!** 🔥
