@@ -2,12 +2,12 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 
 export default function SiteFooter() {
   return (
-    <div className="mt-16 space-y-4">
+    <footer className="mt-16 pt-8 border-t border-border space-y-3">
       <div>
-        <p className="text-base text-foreground">Let's work together!</p>
+        <p className="text-sm text-muted-foreground">let's work together</p>
         <a
           href="mailto:dhruvvcodess@gmail.com"
-          className="text-base text-foreground underline underline-offset-4 hover:opacity-70"
+          className="text-base text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity"
         >
           dhruvvcodess@gmail.com
         </a>
@@ -20,7 +20,7 @@ export default function SiteFooter() {
           aria-label="X (Twitter)"
           className="hover:text-foreground transition-colors"
         >
-          <Twitter size={18} />
+          <Twitter size={17} />
         </a>
         <a
           href="https://www.linkedin.com/in/dhruv-patel-2562bb369/"
@@ -29,7 +29,7 @@ export default function SiteFooter() {
           aria-label="LinkedIn"
           className="hover:text-foreground transition-colors"
         >
-          <Linkedin size={18} />
+          <Linkedin size={17} />
         </a>
         <a
           href="https://github.com/import-dhruv"
@@ -38,9 +38,9 @@ export default function SiteFooter() {
           aria-label="GitHub"
           className="hover:text-foreground transition-colors"
         >
-          <Github size={18} />
+          <Github size={17} />
         </a>
       </div>
-    </div>
+    </footer>
   );
 }

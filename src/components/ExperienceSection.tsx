@@ -7,14 +7,15 @@ function Role({ role }: { role: ExperienceRole }) {
 
   return (
     <li className="border-l-2 border-border pl-4 transition-colors hover:border-foreground/30">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-        <span className="font-medium text-foreground">
-          {role.company}, <span className="text-foreground/80 italic">{role.title}</span>
+      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+        <span className="text-base font-medium text-foreground">
+          {role.company},{" "}
+          <span className="text-foreground/80 italic">{role.title}</span>
         </span>
         <span className="text-sm text-muted-foreground">{role.period}</span>
       </div>
 
-      <p className="mt-2 text-base text-foreground/90">{role.summary}</p>
+      <p className="mt-2 text-base text-foreground/90 leading-relaxed">{role.summary}</p>
 
       <button
         type="button"
@@ -27,12 +28,10 @@ function Role({ role }: { role: ExperienceRole }) {
       </button>
 
       {open && (
-        <ul className="mt-3 space-y-2 text-sm text-foreground/85">
+        <ul className="mt-3 space-y-2">
           {role.highlights.map((highlight, i) => (
-            <li key={i} className="flex gap-2">
-              <span aria-hidden className="text-muted-foreground">
-                &mdash;
-              </span>
+            <li key={i} className="flex gap-2 text-sm text-foreground/85 leading-relaxed">
+              <span aria-hidden className="text-muted-foreground shrink-0">&mdash;</span>
               <span>{highlight}</span>
             </li>
           ))}
@@ -46,9 +45,9 @@ export default function ExperienceSection() {
   const roles = getAllExperience();
 
   return (
-    <section id="experience" className="mb-20">
-      <h2 className="text-2xl font-bold text-foreground mb-6">experience</h2>
-      <ul className="space-y-8">
+    <section id="experience" className="mb-14">
+      <h2 className="text-2xl font-bold text-foreground mb-4">experience</h2>
+      <ul className="space-y-6">
         {roles.map((role) => (
           <Role key={`${role.company}-${role.title}-${role.period}`} role={role} />
         ))}

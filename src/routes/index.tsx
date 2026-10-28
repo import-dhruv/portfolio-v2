@@ -1,13 +1,21 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import Polaroid from "@/components/Polaroid";
 import ExperienceSection from "@/components/ExperienceSection";
 import { Button } from "@/components/ui/button";
 import { FileText, Mail, Github, Linkedin, Twitter } from "lucide-react";
-import { getAllProjects } from "@/data/projects";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
+
+const workItems = [
+  {
+    label: "projects",
+    href: "https://github.com/import-dhruv/dynamion",
+  },
+  { label: "open source", href: "#" },
+  { label: "paper implementation", href: "#" },
+];
 
 const writings = [
   { label: "competitive programming", href: "#" },
@@ -15,18 +23,17 @@ const writings = [
 ];
 
 function Home() {
-  const projects = getAllProjects();
-
   return (
-    <main className="mx-auto max-w-3xl px-4 sm:px-6 pt-24 sm:pt-32 pb-12 sm:pb-20">
+    <main className="mx-auto max-w-2xl px-6 pt-28 pb-20 sm:pt-32">
+
       {/* About Me Section */}
-      <section id="about" className="mb-16 sm:mb-20">
-        <div className="mb-8 sm:mb-10">
+      <section id="about" className="mb-14">
+        <div className="mb-10">
           <Polaroid />
         </div>
 
-        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">about me</h2>
-        <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-foreground/90">
+        <h2 className="text-2xl font-bold text-foreground mb-4">about me</h2>
+        <div className="space-y-3 text-base text-foreground/90 leading-relaxed">
           <p>
             i'm dhruv patel, an ai engineer. i'm interested, broadly, in computer science,
             mathematics, and the intersection of these fields. recently, i've been working on
@@ -43,7 +50,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="mt-4 sm:mt-6">
+        <div className="mt-6">
           <Button asChild variant="default" className="gap-2 w-full sm:w-auto">
             <a href="/resume.pdf" download target="_blank" rel="noopener noreferrer">
               <FileText className="h-4 w-4" />
@@ -57,24 +64,37 @@ function Home() {
       <ExperienceSection />
 
       {/* Work Section */}
-      <section id="work" className="mb-16 sm:mb-20">
-        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">work</h2>
-        <ul className="space-y-2 sm:space-y-3 list-disc list-inside">
-          <li className="text-foreground text-sm sm:text-base">projects</li>
-          <li className="text-foreground text-sm sm:text-base">open source</li>
-          <li className="text-foreground text-sm sm:text-base">paper implementation</li>
+      <section id="work" className="mb-14">
+        <h2 className="text-2xl font-bold text-foreground mb-4">work</h2>
+        <ul className="space-y-2 list-disc list-inside">
+          {workItems.map((item) => (
+            <li key={item.label} className="text-base text-foreground">
+              <a
+                href={item.href}
+                target={item.href !== "#" ? "_blank" : undefined}
+                rel={item.href !== "#" ? "noopener noreferrer" : undefined}
+                className={
+                  item.href !== "#"
+                    ? "hover:text-foreground/70 transition-colors underline underline-offset-4"
+                    : ""
+                }
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </section>
 
       {/* Writing Section */}
-      <section id="writing" className="mb-16 sm:mb-20">
-        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">writing</h2>
-        <ul className="space-y-2 sm:space-y-3 list-disc list-inside">
+      <section id="writing" className="mb-14">
+        <h2 className="text-2xl font-bold text-foreground mb-4">writing</h2>
+        <ul className="space-y-2 list-disc list-inside">
           {writings.map((writing) => (
-            <li key={writing.label}>
+            <li key={writing.label} className="text-base text-foreground">
               <a
                 href={writing.href}
-                className="text-foreground hover:text-foreground/70 transition-colors text-sm sm:text-base"
+                className="hover:text-foreground/70 transition-colors"
               >
                 {writing.label}
               </a>
@@ -84,58 +104,55 @@ function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact">
-        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">contact me</h2>
-        <div className="space-y-3 sm:space-y-4 text-foreground/90 text-sm sm:text-base">
-          <p className="break-words">
+      <section id="contact" className="mb-4">
+        <h2 className="text-2xl font-bold text-foreground mb-4">contact me</h2>
+        <div className="space-y-4 text-foreground/90">
+          <p className="text-base leading-relaxed">
             you can reach me at{" "}
-            <code className="px-2 py-1 bg-muted rounded text-xs sm:text-sm">x@gmail.com</code>{" "}
-            <span className="block sm:inline mt-1 sm:mt-0">
-              where{" "}
-              <code className="px-2 py-1 bg-muted rounded text-xs sm:text-sm">
-                x = dhruvvcodess
-              </code>
-            </span>
+            <code className="px-1.5 py-0.5 bg-muted rounded text-sm">x@gmail.com</code>{" "}
+            where{" "}
+            <code className="px-1.5 py-0.5 bg-muted rounded text-sm">x = dhruvvcodess</code>
           </p>
 
-          <div className="flex gap-4 pt-2 sm:pt-4">
+          <div className="flex gap-5 pt-1">
             <a
               href="mailto:dhruvvcodess@gmail.com"
-              className="text-foreground hover:text-foreground/70 transition-colors"
+              className="text-foreground hover:text-foreground/60 transition-colors"
               aria-label="Email"
             >
-              <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
+              <Mail className="h-5 w-5" />
             </a>
             <a
               href="https://x.com/importdhruv"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-foreground/70 transition-colors"
+              className="text-foreground hover:text-foreground/60 transition-colors"
               aria-label="X (Twitter)"
             >
-              <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />
+              <Twitter className="h-5 w-5" />
             </a>
             <a
               href="https://github.com/import-dhruv"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-foreground/70 transition-colors"
+              className="text-foreground hover:text-foreground/60 transition-colors"
               aria-label="GitHub"
             >
-              <Github className="h-5 w-5 sm:h-6 sm:w-6" />
+              <Github className="h-5 w-5" />
             </a>
             <a
               href="https://www.linkedin.com/in/dhruv-patel-2562bb369/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-foreground/70 transition-colors"
+              className="text-foreground hover:text-foreground/60 transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
+              <Linkedin className="h-5 w-5" />
             </a>
           </div>
         </div>
       </section>
+
     </main>
   );
 }
