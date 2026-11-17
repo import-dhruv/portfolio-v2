@@ -22,7 +22,7 @@ const workItems = [
 ];
 
 const writings = [
-  { label: "competitive programming", href: "#" },
+  { label: "computer science", href: "/writing/computer-science" },
   { label: "ai", href: "#" },
 ];
 
@@ -112,6 +112,8 @@ function Home() {
                 <ShineBorder className="transition-transform duration-300 hover:-translate-y-0.5">
                   <a
                     href={writing.href}
+                    target={writing.href.startsWith("http") ? "_blank" : undefined}
+                    rel={writing.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="flex items-center gap-3 px-4 py-3 text-base text-foreground hover:text-foreground/70 transition-colors"
                   >
                     <span
