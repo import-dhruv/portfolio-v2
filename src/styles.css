@@ -34,48 +34,62 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.985 0.005 85);
-  --foreground: oklch(0.22 0.01 60);
+  --background: oklch(0.985 0.004 250);
+  --foreground: oklch(0.21 0.02 265);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.01 60);
+  --card-foreground: oklch(0.21 0.02 265);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.01 60);
-  --primary: oklch(0.22 0.01 60);
-  --primary-foreground: oklch(0.985 0.005 85);
-  --secondary: oklch(0.95 0.008 85);
-  --secondary-foreground: oklch(0.22 0.01 60);
-  --muted: oklch(0.94 0.008 85);
-  --muted-foreground: oklch(0.5 0.015 60);
-  --accent: oklch(0.94 0.008 85);
-  --accent-foreground: oklch(0.22 0.01 60);
+  --popover-foreground: oklch(0.21 0.02 265);
+  --primary: oklch(0.5 0.2 285);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.01 265);
+  --secondary-foreground: oklch(0.21 0.02 265);
+  --muted: oklch(0.95 0.008 265);
+  --muted-foreground: oklch(0.5 0.02 265);
+  --accent: oklch(0.94 0.02 285);
+  --accent-foreground: oklch(0.21 0.02 265);
   --destructive: oklch(0.6 0.2 25);
-  --destructive-foreground: oklch(0.985 0.005 85);
-  --border: oklch(0.9 0.008 85);
-  --input: oklch(0.9 0.008 85);
-  --ring: oklch(0.7 0.01 60);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.9 0.01 265);
+  --input: oklch(0.9 0.01 265);
+  --ring: oklch(0.6 0.18 285);
+
+  --aurora-1: rgba(139, 92, 246, 0.16);
+  --aurora-2: rgba(34, 211, 238, 0.14);
+  --aurora-3: rgba(217, 70, 239, 0.1);
+  --dot-color: rgba(40, 30, 80, 0.09);
+  --shine-c1: oklch(0.62 0.22 295);
+  --shine-c2: oklch(0.7 0.16 200);
   color-scheme: light;
 }
 
 .dark {
-  --background: oklch(0.15 0.01 240);
-  --foreground: oklch(0.95 0.005 85);
-  --card: oklch(0.18 0.01 240);
-  --card-foreground: oklch(0.95 0.005 85);
-  --popover: oklch(0.18 0.01 240);
-  --popover-foreground: oklch(0.95 0.005 85);
-  --primary: oklch(0.95 0.005 85);
-  --primary-foreground: oklch(0.18 0.01 240);
-  --secondary: oklch(0.22 0.015 240);
-  --secondary-foreground: oklch(0.95 0.005 85);
-  --muted: oklch(0.25 0.015 240);
-  --muted-foreground: oklch(0.65 0.01 240);
-  --accent: oklch(0.28 0.015 240);
-  --accent-foreground: oklch(0.95 0.005 85);
-  --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(0.95 0.005 85);
-  --border: oklch(0.28 0.015 240);
-  --input: oklch(0.28 0.015 240);
-  --ring: oklch(0.65 0.015 240);
+  --background: oklch(0.13 0.014 265);
+  --foreground: oklch(0.96 0.005 250);
+  --card: oklch(0.19 0.016 265);
+  --card-foreground: oklch(0.96 0.005 250);
+  --popover: oklch(0.2 0.018 265);
+  --popover-foreground: oklch(0.96 0.005 250);
+  --primary: oklch(0.72 0.17 295);
+  --primary-foreground: oklch(0.16 0.015 265);
+  --secondary: oklch(0.23 0.02 265);
+  --secondary-foreground: oklch(0.96 0.005 250);
+  --muted: oklch(0.25 0.02 265);
+  --muted-foreground: oklch(0.7 0.02 260);
+  --accent: oklch(0.28 0.025 285);
+  --accent-foreground: oklch(0.96 0.005 250);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.96 0.005 250);
+  --border: oklch(0.32 0.025 265);
+  --input: oklch(0.32 0.025 265);
+  --ring: oklch(0.7 0.16 295);
+
+  --aurora-1: rgba(139, 92, 246, 0.3);
+  --aurora-2: rgba(34, 211, 238, 0.22);
+  --aurora-3: rgba(217, 70, 239, 0.18);
+  --dot-color: rgba(255, 255, 255, 0.055);
+  --shine-c1: oklch(0.72 0.2 295);
+  --shine-c2: oklch(0.8 0.16 195);
   color-scheme: dark;
 }
 
@@ -90,5 +104,167 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+::selection {
+  background: color-mix(in oklch, var(--primary) 35%, transparent);
+  color: var(--foreground);
+}
+
+/* --- Shine Border (21st.dev) ------------------------------------------- */
+@property --shine-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes shine-spin {
+  to {
+    --shine-angle: 360deg;
+  }
+}
+
+.shine-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--shine-angle),
+    transparent 52%,
+    var(--shine-c1) 70%,
+    var(--shine-c2) 80%,
+    transparent 96%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: shine-spin 5s linear infinite;
+  pointer-events: none;
+}
+
+.shine-border:hover::before,
+.shine-border:focus-within::before {
+  opacity: 1;
+}
+
+.shine-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Timeline rail (21st.dev Experience Timeline) ---------------------- */
+.timeline-rail::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    var(--shine-c1),
+    var(--shine-c2) 55%,
+    transparent
+  );
+  opacity: 0.8;
+}
+
+.timeline-dot {
+  display: block;
+  height: 12px;
+  width: 12px;
+  border-radius: 9999px;
+  background: var(--background);
+  border: 2px solid var(--shine-c2);
+  box-shadow:
+    0 0 0 4px color-mix(in oklch, var(--shine-c2) 14%, transparent),
+    0 0 14px color-mix(in oklch, var(--shine-c2) 55%, transparent);
+}
+
+/* --- Social icons dock -------------------------------------------------- */
+.social-icon {
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklch, var(--foreground) 12%, transparent);
+  background: color-mix(in oklch, var(--foreground) 4%, transparent);
+}
+
+.social-icon:hover {
+  border-color: color-mix(in oklch, var(--shine-c1) 55%, transparent);
+  background: color-mix(in oklch, var(--shine-c1) 10%, transparent);
+}
+
+/* Resume button — same treatment as the contact icon buttons */
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklch, var(--foreground) 12%, transparent);
+  background: color-mix(in oklch, var(--foreground) 4%, transparent);
+  color: var(--foreground);
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.social-button:hover {
+  border-color: color-mix(in oklch, var(--shine-c1) 55%, transparent);
+  background: color-mix(in oklch, var(--shine-c1) 10%, transparent);
+}
+
+/* --- Misc polish -------------------------------------------------------- */
+.section-title {
+  background: linear-gradient(
+    to right,
+    var(--foreground),
+    color-mix(in oklch, var(--foreground) 55%, transparent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-divider {
+  position: relative;
+}
+
+.footer-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .shine-border::before {
+    animation: none;
   }
 }
