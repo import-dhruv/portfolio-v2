@@ -33,6 +33,23 @@ export const projects: Project[] = [
     github: "https://github.com/import-dhruv/dynamion",
     featured: true,
   },
+  {
+    id: 5,
+    title: "naad desk",
+    description:
+      "Production-style Indian-language voice AI showcase: a realtime voice agent, deterministic appointment tooling, hybrid multilingual retrieval, post-call analytics, and an evaluation lab with measured latency and WER.",
+    tags: [
+      "Python",
+      "FastAPI",
+      "React",
+      "Voice AI",
+      "RAG",
+      "Evaluation",
+    ],
+    link: "https://naad-desk.vercel.app",
+    github: "https://github.com/import-dhruv/naad-desk",
+    featured: true,
+  },
 ];
 
 /**
